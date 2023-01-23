@@ -13,6 +13,18 @@ function fibonacci2(n, memo) {
   return memo[n];
 }
 
+function fibonacci3(n) {
+  if (n <= 1) return n;
+
+  const table = [0, 1];
+
+  for (let i = 2; i <= n; i++) {
+    table[i] = table[i - 2] + table[i - 1];
+  }
+
+  return table[n];
+}
+
 let start = new Date();
 console.log(fibonacci1(40));
 let end = new Date();
@@ -22,3 +34,8 @@ start = new Date();
 console.log(fibonacci2(40, {}));
 end = new Date();
 console.log(`fibonacci2 실행시간: ${end - start}ms`);
+
+start = new Date();
+console.log(fibonacci3(40));
+end = new Date();
+console.log(`fibonacci3 실행시간: ${end - start}ms`);

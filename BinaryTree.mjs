@@ -29,6 +29,18 @@ export class BinaryTree {
     this.rightTree = tree;
   }
 
+  removeLeftSubTree() {
+    const deletingNode = this.getLeftSubTree();
+    this.setLeftSubTree(null);
+    return deletingNode;
+  }
+
+  removeRightSubTree() {
+    const deletingNode = this.getRightSubTree();
+    this.setRightSubTree(null);
+    return deletingNode;
+  }
+
   preOrderTraversal(tree) {
     if (tree === null) return;
 
